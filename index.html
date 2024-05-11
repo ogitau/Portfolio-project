@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Management</title>
+<style>
+  /* Add your custom CSS styles here */
+</style>
+</head>
+<body>
+  <h1>Patient Management</h1>
+  
+  <!-- Form for creating a new patient -->
+  <h2>Create New Patient</h2>
+  <form id="createPatientForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="yearOfBirth">Year of Birth:</label>
+    <input type="date" id="yearOfBirth" name="yearOfBirth" required><br><br>
+    <label for="contact">Contact Number:</label>
+    <input type="tel" id="contact" name="contact" required><br><br>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select><br><br>
+    <button type="submit">Create</button>
+  </form>
+
+  <!-- Container for displaying patient data -->
+  <!--<div id="patientList">-->
+    <!-- Patient data will be displayed here -->
+  </div>
+
+  <script>
+    const createPatient = async (req, res) =>{
+    try {
+        const patient = await Patient.create(req.body);
+        res.status(200).json(patient);
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+}
+    document.getElementById("createPatientForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Get form data
+      const formData = new FormData(event.target);
+      const formDataObject = Object.fromEntries(formData.entries());
+      
+      // Send POST request to create patient
+      try {
+        const response = await createPatient("/api/patients", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formDataObject)
+        });
+        
+        if (!response.ok) {
+          throw new Error("Failed to create patient.");
+        }
+        
+        // Reset form
+        event.target.reset();
+        alert("Patient created successfully!");
+      } catch (error) {
+        console.error("Error creating patient:", error);
+        alert("An error occurred. Please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>
