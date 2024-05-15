@@ -16,10 +16,13 @@ const Record = (props) => (
       {props.record.contact}
     </td>
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-      {props.record.prescription}
+      {props.record.diagnosis}
     </td>
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       {props.record.medication}
+    </td>
+    <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+      {props.record.appointment_date}
     </td>
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       {props.record.total_charges}
@@ -112,10 +115,13 @@ export default function RecordList() {
                   Contact
                 </th>
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
-                  Prescription
+                  Diagnosis
                 </th>
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
                   Medication
+                </th>
+                <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                  Appointment Date
                 </th>
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
                   Total Charges

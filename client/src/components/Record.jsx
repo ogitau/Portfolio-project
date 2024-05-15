@@ -80,8 +80,9 @@ export default function Record() {
         year_of_birth: "",
         gender: "",
         contact: "",
-        prescription: "",
+        diagnosis: "",
         medication: "",
+        appointment_date: "",
         total_charges: "",
         amount_paid: ""
       });
@@ -193,18 +194,18 @@ export default function Record() {
                 htmlFor="prescription"
                 className="block text-sm font-medium leading-6 text-slate-900"
               >
-                Prescription
+                Diagnosis
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-slate-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <input
                     type="text"
-                    name="prescription"
-                    id="prescription"
+                    name="diagnosis"
+                    id="diagnosis"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-slate-900 placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="quinine"
-                    value={form.prescription}
-                    onChange={(e) => updateForm({ prescription: e.target.value })}
+                    placeholder="malaria"
+                    value={form.diagnosis}
+                    onChange={(e) => updateForm({ diagnosis: e.target.value })}
                   />
                 </div>
               </div>
@@ -226,6 +227,27 @@ export default function Record() {
                     placeholder="Quinine"
                     value={form.medication}
                     onChange={(e) => updateForm({ medication: e.target.value })}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="sm:col-span-4">
+              <label
+                htmlFor="appointment_date"
+                className="block text-sm font-medium leading-6 text-slate-900"
+              >
+                Appointment Date
+              </label>
+              <div className="mt-2">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-slate-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input
+                    type="date"
+                    name="appointment_date"
+                    id="appointment_date"
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-slate-900 placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    placeholder=" 02/25/2024"
+                    value={form.appointment_date}
+                    onChange={(e) => updateForm({ appointment_date: e.target.value })}
                   />
                 </div>
               </div>
