@@ -21,13 +21,17 @@ const PatientSchema = mongoose.Schema(
       minlength: 10,
       required: true,
     },
-    prescription: {
+    diagnosis: {
       type: String,
       required: true,
     },
     medication: {
       type: Array,
       of: { type: String },
+    },
+    appointment_date: {
+      type: Date,
+      required: false,
     },
     total_charges: {
       type: Number,
