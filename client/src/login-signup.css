@@ -1,15 +1,16 @@
-*{
+* {
     margin: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background:  url(../images/loginpic2.jpg)no-repeat;
+    background: url('../images/loginpic2.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -17,7 +18,7 @@ body{
     position: relative;
     width: 600px;
     height: 600px;
-    background: url(../images/a2.jpg)no-repeat;
+    background: url('../images/a2.jpg') no-repeat;
     border-radius: 20px;
     box-shadow: 0 0 200px #5406e5;
     padding: 40px;
@@ -25,13 +26,11 @@ body{
     font-weight: bolder;
 }
 
-
-
 .form-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
-    align-items:  center;
+    align-items: center;
     height: 100%;
     transition: 1s ease-in-out;
 }
@@ -44,7 +43,6 @@ h2 {
     font-size: 50px;
     color: #000;
     text-align: center;
-
 }
 
 .input-group {
@@ -58,11 +56,9 @@ h2 {
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-/*    color: #fff;*/
     font-size: 16px;
     pointer-events: none;
     transition: .5s;
-    
 }
 
 .input-group input {
@@ -74,23 +70,19 @@ h2 {
     background: transparent;
     outline: none;
     border: none;
-
 }
 
-.input-group input:focus~label,
-.input-group input:valid~label{
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
     top: -5px;
     color: #5406e5;
 }
 
 .remember {
-    margin: -5px 0 15px  5px;
-
+    margin: -5px 0 15px 5px;
 }
 
-
 .remember label {
-  /*  color: #fff;*/
     font-size: 16px;
 }
 
@@ -98,7 +90,7 @@ h2 {
     accent-color: #5406e5;
 }
 
-button{
+button {
     position: relative;
     width: 100%;
     height: 40px;
@@ -109,12 +101,10 @@ button{
     font-weight: 500;
     color: #000;
     font-size: 26px;
-/*    box-shadow: 0 0 0 10px #5406e5;*/
-    border: #5406e5 solid 2px;
+    border: 2px solid #5406e5;
     background: #8b56ee;
-    
-
 }
+
 .signUp-link {
     text-align: center;
     margin: 15px 0;
@@ -133,5 +123,4 @@ button{
 
 .signUp-link p a:hover {
     text-decoration: underline;
-
 }
