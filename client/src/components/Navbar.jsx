@@ -11,7 +11,7 @@ export default function Navbar({ onSearch }) {
   return (
     <div>
       <nav className="flex justify-between items-center mb-6 bg-green-600 p-4 rounded-md shadow-md">
-        <NavLink to="/" className="text-white text-lg font-bold">
+        <NavLink to="/records" className="text-white text-lg font-bold">
           <h1>GreenBelt EHRS</h1>
         </NavLink>
 
